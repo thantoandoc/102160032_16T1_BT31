@@ -24,6 +24,26 @@ NhanVien::NhanVien(const NhanVien * nv)
 	this->salary = nv->salary;
 }
 
+void NhanVien::setName(string name)
+{
+	this->name = name;
+}
+
+void NhanVien::setGender(bool gender)
+{
+	this->sex = gender;
+}
+
+void NhanVien::setBirthDay(Date d)
+{
+	this->startTime = d;
+}
+
+void NhanVien::setSalary(double salary)
+{
+	this->salary = salary;
+}
+
 string NhanVien::getID()
 {
 	return string(id);
@@ -51,8 +71,8 @@ NhanVien::~NhanVien()
 
 ostream & operator<<(ostream & o, NhanVien *nv)
 {
-	o << setw(8) <<nv->id << "|" << setw(30) << nv->name << "|" << setw(15) << nv->sex << "|" << setw(7) << nv->salary << "|" << setw(10) << nv->salary << "|" << endl;
-	for (int i = 0; i < 75; i++) {
+	o << setw(8) <<nv->id << "|" << setw(30) << nv->name << "|" << setw(10) << nv->startTime << "|" << setw(7) << (nv->sex ? "Nam" : "Nu") << "|" << setw(10) << setprecision(10)<< nv->getSalary() << "|" << endl;
+	for (int i = 0; i < 70; i++) {
 		cout << "-";
 	}
 	cout << endl;

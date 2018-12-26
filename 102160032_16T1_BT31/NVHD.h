@@ -9,8 +9,8 @@ public:
 	NVHD(string id, string name, Date d, bool sex, double salary);
 	double getSalary();
 	~NVHD();
-	friend istream & operator >> (istream &, NVHD &);
-	friend ostream & operator << (ostream &, NVHD &);
-	friend ostream & operator << (ostream &, NVHD *);
+	friend istream & operator >> (istream &, NVHD *);
+	friend ostream & operator << (ostream &, NhanVien *);
+
 };
 

@@ -16,40 +16,42 @@ bool checkID(string id) {
 	return true;
 }
 
-istream & operator>>(istream &in, NVBC &nv)
+istream & operator>>(istream &in, NVBC * nv)
 {
+	in.ignore(true);
 	do
 	{
 		cout << "Nhap Ma Nhan Vien :";
 		in.ignore(0);
-		getline(in, nv.id);
-	} while (!checkID(nv.id));
+		getline(in, nv->id);
+	} while (!checkID(nv->id));
 	in.ignore(0);
-	cout << "Nhap Ten Nhan Vien :"; getline(in, nv.name);;
+	cout << "Nhap Ten Nhan Vien :"; getline(in, nv->name);;
 	in.ignore(0);
-	cout << "Gioi tinh :"; in >> nv.sex;
+	cout << "Gioi tinh (1_Nam/0_Nu) :"; in >> nv->sex;
 	in.ignore(0);
-	cout << "Thoi gian bat dau lam viec :" << endl; in >> nv.startTime;
+	cout << "Thoi gian bat dau lam viec :" << endl; in >> nv->startTime;
 	in.ignore(0);
-	cout << "Luong 1 ngay :"; in >> nv.salary;
+	cout << "He So Luong :"; in >> nv->salary;
 	return in;
 }
 
-istream & operator>>(istream &in, NVHD &nv)
+istream & operator>>(istream &in, NVHD  * nv)
 {
+	in.ignore(true);
 	do
 	{
 		cout << "Nhap Ma Nhan Vien :";
 		in.ignore(0);
-		getline(in, nv.id);
-	} while (!checkID(nv.id));
+		getline(in, nv->id);
+	} while (!checkID(nv->id));
 	in.ignore(0);
-	cout << "Nhap Ten Nhan Vien :"; getline(in, nv.name);;
+	cout << "Nhap Ten Nhan Vien :"; getline(in, nv->name);;
 	in.ignore(0);
-	cout << "Gioi tinh :"; in >> nv.sex;
+	cout << "Gioi tinh (1_Nam/0_Nu) :"; in >> nv->sex;
 	in.ignore(0);
-	cout << "Thoi gian bat dau lam viec :" << endl; in >> nv.startTime;
+	cout << "Thoi gian bat dau lam viec :" << endl; in >> nv->startTime;
 	in.ignore(0);
-	cout << "Luong 1 ngay :"; in >> nv.salary;
+	cout << "Luong 1 ngay :"; in >> nv->salary;
 	return in;
 }

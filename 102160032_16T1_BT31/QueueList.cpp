@@ -36,6 +36,35 @@ NhanVien * QueueList::pop()
 	return temp;
 }
 
+
+void QueueList::erase(int idx, int len)
+{
+	int n = this->size();
+	for (int i = 0; i < n; i++) {
+		NhanVien *nv = this->pop();
+		if (i > idx + len || i < idx) {
+			this->push(nv);
+		}
+	}
+}
+
+void QueueList::update(int idx)
+{
+	string name;
+	bool gender;
+	Date date;
+	double salary;
+	cout << "Thong Tin Cap Nhat  Phan Tu Thu " << idx << " :" << endl;
+	cout << "Nhap Ten: "; getline(cin, name);
+	cout << "Gioi Tinh: (1 - Nam / 0 - Nu) "; cin >> gender;
+	cout << "Ngay Sinh: " << endl; cin >> date;
+	cout << "Luong: "; cin >> salary;
+	(*this)[idx]->setName(name);
+	(*this)[idx]->setGender(gender);
+	(*this)[idx]->setBirthDay(date);
+	(*this)[idx]->setSalary(salary);
+}
+
 int QueueList::size()
 {
 	Node * temp = front;
@@ -77,7 +106,7 @@ QueueList * QueueList::operator=(QueueList *q)
 
 ostream & operator<<(ostream & o, QueueList * q)
 {
-	o << setw(8) << "ID" <<"|"<< setw(30) << "Name" << "|" << setw(15) << "StartAt" << "|" << setw(7) << "Gender" << "|" << setw(10) << "Salary" << "|" << endl;
+	o << setw(8) << "ID" <<"|"<< setw(30) << "Name" << "|" << setw(10) << "StartAt" << "|" << setw(7) << "Gender" << "|" << setw(10) << "Salary" << "|" << endl;
 	while (!q->empty())
 	{
 		o << q->pop() << endl;

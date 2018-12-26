@@ -10,6 +10,8 @@ public:
 	QueueList(QueueList *);
 	void push(NhanVien *nv);
 	NhanVien * pop();
+	void erase(int idx, int len);
+	void update(int idx);
 	int size();
 	bool empty();
 	~QueueList();

@@ -1,8 +1,9 @@
 #pragma once
-#include "QueueList.h";
+
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include "QueueList.h"
 using namespace std;
 class QLNV
 {
@@ -14,10 +15,12 @@ public:
 	QLNV(QLNV *);
 	void add(NhanVien * nv);
 	int getSize();
-	void sortByID();
+	void sortByID(bool(*cmp)(string, string));
 	void sortByName();
 	void searchById(string);
 	void searchByName(string);
+	void erase(int idx, int length = 1);
+	void update(int idx);
 	~QLNV();
 	friend ostream & operator << (ostream &, QLNV *);
 	NhanVien * operator [] (const int idx);
