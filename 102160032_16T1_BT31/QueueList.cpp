@@ -55,9 +55,10 @@ void QueueList::update(int idx)
 	Date date;
 	double salary;
 	cout << "Thong Tin Cap Nhat  Phan Tu Thu " << idx << " :" << endl;
+	cin.ignore(true);
 	cout << "Nhap Ten: "; getline(cin, name);
 	cout << "Gioi Tinh: (1 - Nam / 0 - Nu) "; cin >> gender;
-	cout << "Ngay Sinh: " << endl; cin >> date;
+	cout << "Ngay Bat Dau Lam Viec: " << endl; cin >> date;
 	cout << "Luong: "; cin >> salary;
 	(*this)[idx]->setName(name);
 	(*this)[idx]->setGender(gender);
