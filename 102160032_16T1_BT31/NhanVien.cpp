@@ -67,6 +67,7 @@ double NhanVien::getSalary()
 
 NhanVien::~NhanVien()
 {
+	cout << "nhan Vien" << endl;
 }
 
 ostream & operator<<(ostream & o, NhanVien *nv)

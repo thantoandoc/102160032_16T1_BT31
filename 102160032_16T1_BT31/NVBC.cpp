@@ -36,4 +36,5 @@ double NVBC::getSalary()
 
 NVBC::~NVBC()
 {
+	cout << "NVBC" << endl;
 }

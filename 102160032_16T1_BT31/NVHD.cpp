@@ -56,5 +56,6 @@ double NVHD::getSalary()
 
 NVHD::~NVHD()
 {
+	cout << "NVHD" << endl;
 }
 

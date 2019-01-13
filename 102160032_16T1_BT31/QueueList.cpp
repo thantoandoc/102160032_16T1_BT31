@@ -44,6 +44,8 @@ void QueueList::erase(int idx, int len)
 		NhanVien *nv = this->pop();
 		if (i > idx + len || i < idx) {
 			this->push(nv);
+		}else{
+			delete nv;
 		}
 	}
 }

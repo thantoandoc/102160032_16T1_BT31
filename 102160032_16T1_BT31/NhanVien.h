@@ -26,7 +26,7 @@ public:
 	string getName();
 	bool getGender();
 	virtual double getSalary();
-	~NhanVien();
+	virtual ~NhanVien();
 	friend ostream & operator << (ostream &, NhanVien *);
 };
 
